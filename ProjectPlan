@@ -1,0 +1,73 @@
+Overview
+The goal of this project is to analyze patterns in public safety and community service in Chicago using tabular data from the 
+City of Chicago Open Data Portal. We will explore temporal and categorical trends in crime reports and 311 service requests to
+understand relationships between incident types, request types, and patterns over time.
+
+Our approach is to perform data cleaning, feature engineering, exploratory analysis, and correlation analysis. We aim to identify: 
+which types of crime and service requests are most common, whether certain request types correlate with specific crime types, and
+how these trends change over time (by day, month, or year). Visualizations such as line charts, bar charts, and heatmaps will 
+communicate temporal and categorical patterns.
+
+Team
+Avery Terri: Will be responsible for identifying and acquiring the datasets from the City of Chicago Open Data Portal. Avery will 
+perform the initial data cleaning and preprocessing, including handling missing values and standardizing variables across the datasets. 
+Avery will also conduct feature engineering by extracting time-based variables from timestamps and preparing the data for analysis. In 
+addition, Avery will create visualizations such as charts and heatmaps to communicate trends and correlations identified in the data.
+
+Sam Kowal: Will focus on conducting exploratory data analysis to better understand patterns in the datasets. Sam will analyze 
+relationships between crime categories and 311 service request types using statistical and correlation methods. Sam will also help 
+interpret the analytical results and summarize key insights discovered during the analysis process. In addition, Sam will contribute to 
+drafting sections of the final project report and refining the written explanations of the findings.
+
+Research/Business Questions
+1. Are there observable correlations between specific types of crime and specific 311 service requests?
+2. How do crime incidents and service requests vary over time (daily, monthly, yearly trends)?
+
+Datasets
+1. Chicago Crime Data – Tabular dataset of reported crimes (from 2001 to present) including crime type, date/time, and location 
+information. Location will not be analyzed spatially; only temporal and categorical attributes will be used.
+Source: City of Chicago Crime Data
+
+2. Chicago 311 Service Requests – Tabular dataset of non-emergency service requests, including request type and date/time. Only
+categorical and temporal attributes will be analyzed.
+Source: City of Chicago 311 Service Requests
+
+Integration: Both datasets include date/time fields, allowing temporal aggregation and correlation analysis. Common categorical 
+fields (e.g., request type vs crime type) can be used for comparative analysis.
+
+Kaggle Clause: All datasets are sourced directly from the City of Chicago Open Data Portal, which ensures official provenance, 
+clear licensing, and reproducibility. No Kaggle datasets are used.
+
+Timeline
+- Data Acquisition: download datasets, review schemas
+    - Responsible: Avery
+- Data Cleaning: handle missing values, standardize, encode categorical fields
+    - Responsible: Avery & Sam
+- Feature Engineering: extract day/month/year from timestamps, categorize request and crime types
+    - Responsible: Avery
+- Exploratory Analysis: summarize distributions, counts, and temporal patterns
+    - Responsible: Sam
+- Correlation Analysis: compute correlations between crime types and service request types over time
+    - Responsible: Avery & Sam
+- Visualization: create charts, bar plots, line charts, heatmaps for trends and correlations
+    - Responsible: Avery
+- Draft Report: compile findings, figures, and interpretations
+    - Responsible: Sam
+- Final Review & Release: review, commit, tag release, prepare Canvas submission
+    - Responsible: Avery & Sam
+
+Constraints
+Data completeness: Crime and 311 data only reflect reported incidents; unreported events are not included.
+
+Temporal resolution: Time stamps may have inconsistencies or missing values.
+
+Data volume: Large datasets may require sampling or efficient processing strategies.
+
+Categorical ambiguity: Some categories may overlap or be inconsistently labeled across datasets.
+
+Gaps
+Need to define which crime types and 311 request types are most relevant to analyze correlations.
+
+Decisions on the appropriate temporal aggregation (daily, weekly, monthly) for meaningful analysis.
+
+Consideration of normalization or scaling when comparing counts across datasets.

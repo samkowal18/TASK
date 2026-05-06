@@ -47,7 +47,9 @@ data/
 ├── raw/             
 │   ├── chicago_crime.csv
 │   └── chicago_311.csv
-├── processed/        
+├── processed/
+│   ├── crime_clean.csv
+│   └── 311_clean.csv    
              
 outputs/
 ├── figures/         
@@ -67,7 +69,7 @@ the entire workflow to be reproduced.
 
 * Search "Crime"
 * Select *Crimes - 2001 to present*
-* Filter for desired time frame
+* Filter for desired time frame (using 2025-2026 for this project)
 
 **Acquisition:** 
 
@@ -103,7 +105,7 @@ ____
 
 * Search "311"
 * Select *311 Service Requests*
-* Filter for desired time frame
+* Filter for desired time frame (using 2025-2026 for this project)
   
 **Acquisition:**
 

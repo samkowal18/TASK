@@ -1,0 +1,48 @@
+import pandas as pd
+
+# read csvs
+import pandas as pd
+
+crime = pd.read_csv(
+    "chicago_crimes.csv",
+    on_bad_lines="skip",
+    engine="python"
+)
+
+print(crime.shape)
+service = pd.read_csv(
+    "chicago_311.csv",
+    on_bad_lines="skip",
+    engine="python"
+)
+
+print(service.shape)
+
+# check columns and filter
+crime = crime[['Date', 'Primary Type']]
+service = service[['CREATED_DATE', 'SR_TYPE']]
+
+# rename columns
+crime = crime.rename(columns = {
+    'Primary Type': 'category'
+})
+service = service.rename(columns = {
+   'CREATED_DATE': 'Date',
+    'SR_TYPE': 'category'
+})
+
+# convert datetimes 
+crime['Date'] = pd.to_datetime(crime['Date'], errors='coerce')
+service['Date'] = pd.to_datetime(service['Date'], errors='coerce')
+
+# Drop missing values
+crime = crime.dropna(subset=['Date', 'category'])
+service = service.dropna(subset=['Date', 'category'])
+
+crime['month'] = crime['Date'].dt.to_period('M')
+service['month'] = service['Date'].dt.to_period('M')
+
+crime.to_csv("crime_clean.csv", index=False)
+service.to_csv("service_clean.csv", index=False)
+
+print("Saved processed datasets.")

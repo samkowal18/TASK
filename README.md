@@ -270,6 +270,12 @@ Overall, while this project provides a strong foundation, expanding the dataset,
 ### Monthly Trends
 ![Monthly Trends](outputs/monthly_trends.png)
 
+## References
+
+- Chicago Crime Dataset – Chicago Open Data Portal  
+- Chicago 311 Service Requests – Chicago Open Data Portal  
+- Python libraries: pandas, matplotlib  
+
 ## Reproducing
 
 To reproduce the analysis:

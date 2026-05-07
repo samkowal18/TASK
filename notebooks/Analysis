@@ -16,6 +16,22 @@ print(crime.head())
 print("\n311 service data preview:")
 print(service.head())
 
+Crime data:
+                  Date  category    month
+0  2026-04-28 00:00:00   BATTERY  2026-04
+1  2026-04-28 00:00:00   ASSAULT  2026-04
+2  2026-04-28 00:00:00  BURGLARY  2026-04
+3  2026-04-28 00:00:00   ASSAULT  2026-04
+4  2026-04-28 00:00:00     THEFT  2026-04
+
+311 Service data:
+             Date                        category    month
+0  5/6/2025 14:56        Graffiti Removal Request  2025-05
+1  5/6/2025 14:56  City Vehicle Sticker Violation  2025-05
+2  5/6/2025 14:56       311 INFORMATION ONLY CALL  2025-05
+3  5/6/2025 14:56           Fly Dumping Complaint  2025-05
+4  5/6/2025 14:56        Aircraft Noise Complaint  2025-05
+
 #Top crime categories
 crime_top = crime["category"].value_counts().head(10)
 
@@ -34,6 +50,20 @@ plt.tight_layout()
 plt.savefig("outputs/figures/top_crime_categories.png")
 plt.close()
 
+Top Crime Categories:
+category
+THEFT                  24939
+BATTERY                20215
+CRIMINAL DAMAGE        12447
+ASSAULT                 9846
+MOTOR VEHICLE THEFT     8905
+OTHER OFFENSE           7833
+DECEPTIVE PRACTICE      6482
+BURGLARY                5865
+NARCOTICS               3303
+CRIMINAL TRESPASS       2745
+Name: count, dtype: int64
+
 #Top 311 service request categories
 service_top = service["category"].value_counts().head(10)
 
@@ -51,6 +81,20 @@ plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
 plt.savefig("outputs/figures/top_311_categories.png")
 plt.close()
+
+Top 311 Service Request Categories:
+category
+311 INFORMATION ONLY CALL       303884
+Aircraft Noise Complaint        160945
+Graffiti Removal Request         40187
+Garbage Cart Maintenance         26017
+Rodent Baiting/Rat Complaint     25645
+Abandoned Vehicle Complaint      23104
+Tree Debris Clean-Up Request     21272
+Tree Emergency                   20836
+Pothole in Street Complaint      17959
+Water in Basement Complaint      16527
+Name: count, dtype: int64
 
 #Monthly trends
 crime["month"] = crime["month"].astype(str)
@@ -78,6 +122,22 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.savefig("outputs/figures/monthly_trends.png")
 plt.close()
+
+Monthly Trends:
+         crime_count  service_request_count
+month                                      
+2025-05          0.0               146382.0
+2025-06          0.0               177333.0
+2025-07          0.0               191081.0
+2025-08          0.0               193062.0
+2025-09          0.0               168158.0
+2025-10       6861.0                30941.0
+2025-11      18392.0                    0.0
+2025-12      17452.0                    0.0
+2026-01      16825.0                    0.0
+2026-02      16370.0                    0.0
+2026-03      18837.0                    0.0
+2026-04      16595.0                    0.0
 
 #Correlation analysis limitation
 common_months = set(crime["month"]).intersection(set(service["month"]))
@@ -140,3 +200,9 @@ else:
     ).head(20)
 
     top_correlations.to_csv("outputs/tables/top_correlations.csv", index=False)
+
+Common months between crime and 311 data:
+{'2025-10'}
+Not enough overlapping months to calculate meaningful correlations.
+
+Analysis complete. Outputs saved to outputs/figures and outputs/tables.

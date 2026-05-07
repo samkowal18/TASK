@@ -7,8 +7,8 @@ os.makedirs("outputs/figures", exist_ok=True)
 os.makedirs("outputs/tables", exist_ok=True)
 
 #Load cleaned data
-crime = pd.read_csv("data/processed/crime_clean.csv")
-service = pd.read_csv("data/processed/service_clean.csv")
+crime = pd.read_csv("Downloads/crime_clean.csv")
+service = pd.read_csv("Downloads/service_clean(in).csv")
 
 print("Crime data preview:")
 print(crime.head())

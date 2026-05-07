@@ -250,6 +250,24 @@ Future analysis could also include geographic information, such as community are
 
 Finally, future versions of the project could include additional datasets, such as weather, public transit activity, or socioeconomic indicators, to better understand outside factors that may influence both crime and resident service requests.
 
+## Visualizations
+
+crime_top = crime["category"].value_counts().head(10)
+print("\nTop Crime Categories:")
+print(crime_top)
+
+crime_top.to_csv("outputs/tables/top_crime_categories.csv")
+
+plt.figure(figsize=(10, 6))
+crime_top.plot(kind="bar")
+plt.title("Top 10 Crime Categories")
+plt.xlabel("Crime Category")
+plt.ylabel("Count")
+plt.xticks(rotation=45, ha="right")
+plt.tight_layout()
+plt.savefig("outputs/figures/top_crime_categories.png")
+plt.show()
+
 ## Reproducing
 
 To reproduce the analysis:
@@ -265,4 +283,7 @@ To reproduce the analysis:
 
 ```bash
 python notebooks/analysis.py
+
+
+
 

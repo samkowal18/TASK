@@ -272,22 +272,25 @@ Overall, while this project provides a strong foundation, expanding the dataset,
 
 ## References
 
-- Chicago Crime Dataset – Chicago Open Data Portal  
-- Chicago 311 Service Requests – Chicago Open Data Portal  
+- Chicago Crime Dataset - Chicago Open Data Portal  
+- Chicago 311 Service Requests - Chicago Open Data Portal  
 - Python libraries: pandas, matplotlib  
 
 ## Reproducing
 
 To reproduce the analysis:
 
-1. Install the required Python packages listed in `requirements.txt`.
+1. Clone or download this repository.
 
-2. Make sure the cleaned datasets are saved in the following locations:
+3. Install the required Python packages listed in `requirements.txt`.
+
+4. Make sure the cleaned datasets are saved in the following locations:
 
    - `data/processed/crime_clean.csv`
    - `data/processed/service_clean.csv`
 
-3. Run the analysis script from the main project folder:
+5. Run the analysis script from the main project folder:
 
 ```bash
 python notebooks/analysis.py
+

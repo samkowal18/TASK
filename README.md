@@ -253,13 +253,13 @@ Finally, future versions of the project could include additional datasets, such 
 ## Visualizations
 
 ### Top Crime Categories
-![Top Crime Categories](outputs/figures/top_crime_categories.png)
+![Top Crime Categories](outputs/top_crime_categories.png)
 
 ### Top 311 Service Request Categories
-![Top 311 Categories](outputs/figures/top_311_categories.png)
+![Top 311 Categories](outputs/top_311_categories.png)
 
 ### Monthly Trends
-![Monthly Trends](outputs/figures/monthly_trends.png)
+![Monthly Trends](outputs/monthly_trends.png)
 
 ## Reproducing
 

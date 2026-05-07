@@ -142,3 +142,5 @@ else:
     top_correlations.to_csv("outputs/tables/top_correlations.csv", index=False)
 
 print("\nAnalysis complete. Outputs saved to outputs/figures and outputs/tables.")
+
+python notebooks/analysis.py
